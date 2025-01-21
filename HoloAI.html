@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/holo2.png" type="image/x-icon">
+
+    <!--=============== REMIX ICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>HoloAI</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="HoloAI – Your intelligent virtual friend, designed to listen, learn, and bring conversations to life.">
+    <meta name="keywords" content="holoai, virtual friend, AI companion, holoai.uk, Holo AI, intelligent AI friend">
+    <meta name="author" content="HoloAI">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="HoloAI – Your Virtual Friend">
+    <meta property="og:description" content="Meet HoloAI, your intelligent virtual friend ready to engage in meaningful conversations.">
+    <meta property="og:image" content="https://holoai.uk/assets/img/holo1.png">
+    <meta property="og:url" content="https://holoai.uk">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HoloAI – Your Virtual Friend">
+    <meta name="twitter:description" content="Meet HoloAI, your intelligent virtual friend ready to engage in meaningful conversations.">
+    <meta name="twitter:image" content="https://holoai.uk/assets/img/holo1.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://holoai.uk">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "HoloAI",
+        "url": "https://holoai.uk",
+        "logo": "https://holoai.uk/assets/img/holo1.png",
+        "description": "HoloAI – Your intelligent virtual friend, designed to listen, learn, and bring conversations to life.",
+        "sameAs": [
+            "https://github.com",
+            "https://www.google.com"
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="profile container">
+        <!-- Theme button -->
+        <i class="ri-moon-line change-theme" id="theme-button" aria-label="Toggle dark mode"></i>
+
+        <div class="profile__container grid">
+            <div class="profile__data">
+                <div class="profile__border">
+                    <div class="profile__perfil">
+                        <img src="assets/img/holo1.png" alt="HoloAI Logo">
+                    </div>
+                </div>
+
+                <h1 class="profile__name">HoloAI</h1>
+                <h3 class="profile__profession">Virtual Friend</h3>
+
+                <ul class="profile__social">
+                    <a href="https://www.google.com/" target="_blank" class="profile__social-link" aria-label="Visit Google">
+                        <i class="ri-google-line"></i>
+                    </a>
+                     
+                    <a href="https://tdknexus.com/" target="_blank" class="profile__social-link" aria-label="Visit GitHub">
+                        <i class="ri-safari-line"></i>
+                    </a>
+                </ul>
+            </div>
+
+            <!--=============== VOICEBOT CONTAINER ===============-->
+            <div class="voicebot-container">
+                <iframe 
+                    src="https://app.vectorshift.ai/voicebots/embedded/678af41819c9c2a135ac9690" 
+                    width="400" 
+                    height="600" 
+                    allow="microphone" 
+                    title="HoloAI Voice Assistant">
+                </iframe>
+            </div>
+        </div>
+    </header>
+
+    <!--=============== FOOTER ===============-->
+    <footer class="footer container">
+        <span class="footer__copy">
+            &#169; 2025 HoloAI<sup>™</sup> | TDKNexus.com | HoloAI.UK | All rights reserved.
+        </span>
+    </footer>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+
+    <!--=============== THEME TOGGLE SCRIPT ===============-->
+    <script>
+        // Reference the theme button and body
+        const themeButton = document.getElementById("theme-button");
+        const body = document.body;
+
+        // Function to set dark mode
+        const enableDarkMode = () => {
+            body.classList.add("dark-theme");
+            localStorage.setItem("theme", "dark");
+        };
+
+        // Function to set light mode
+        const enableLightMode = () => {
+            body.classList.remove("dark-theme");
+            localStorage.setItem("theme", "light");
+        };
+
+        // Check localStorage for existing theme preference
+        const storedTheme = localStorage.getItem("theme");
+        if (storedTheme === "dark") {
+            enableDarkMode(); // Apply dark theme if saved as dark
+        } else if (storedTheme === "light") {
+            enableLightMode(); // Apply light theme if saved as light
+        } else {
+            // Default to dark mode if no preference is saved
+            enableDarkMode();
+        }
+
+        // Add event listener to toggle theme
+        themeButton.addEventListener("click", () => {
+            if (body.classList.contains("dark-theme")) {
+                enableLightMode(); // Switch to light mode
+            } else {
+                enableDarkMode(); // Switch to dark mode
+            }
+        });
+    </script>
+</body>
+
+</html>
